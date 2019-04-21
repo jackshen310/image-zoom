@@ -1,8 +1,8 @@
 {
-  "name": "basic-electron-react-boilerplate",
-  "version": "0.7.0",
-  "description": "Minimal and modern react+electron+webpack boilerplate",
-  "author": "Phillip Barbiero",
+  "name": "image-zoom",
+  "version": "1.0.0",
+  "description": "图片处理",
+  "author": "JackShen",
   "homepage": "https://github.com/pbarbiero/basic-electron-react-boilerplate",
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
     "dev": "webpack-dev-server --hot --host 0.0.0.0 --config=./webpack.dev.config.js",
     "build": "webpack --config webpack.build.config.js",
     "package": "webpack --config webpack.build.config.js",
-    "postpackage": "electron-packager ./ --out=./builds"
+    "postpackage": "rm -rf builds && electron-packager ./ 图片处理 --out=./builds --platform=win32 --arch=x64"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -23,8 +23,11 @@
     "babel-preset-react": "^6.24.1",
     "babili-webpack-plugin": "^0.1.2",
     "css-loader": "^0.28.1",
-    "electron": "^1.7.8",
-    "electron-packager": "^9.1.0",
+    "electron": "3.0.5",
+    "electron-builder": "^17.3.1",
+    "electron-builder-squirrel-windows": "^17.2.0",
+    "electron-devtools-installer": "^2.1.0",
+    "electron-packager": "12.1.0",
     "extract-text-webpack-plugin": "^3.0.1",
     "file-loader": "^1.1.5",
     "html-webpack-plugin": "^2.28.0",
@@ -33,5 +36,10 @@
     "style-loader": "^0.19.0",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "braft-editor": "^2.2.9",
+    "lodash": "^4.17.11",
+    "uuid": "^3.3.2"
   }
 }

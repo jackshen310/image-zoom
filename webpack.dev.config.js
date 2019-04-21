@@ -7,6 +7,8 @@ const { spawn } = require('child_process');
 const SRC_DIR = path.resolve(__dirname, 'src');
 const OUTPUT_DIR = path.resolve(__dirname, 'dist');
 
+const braft_editor = path.resolve(__dirname, 'node_modules/braft-editor');
+
 // Any directories you will be adding code/files into, need to be added to this array so webpack will pick them up
 const defaultInclude = [SRC_DIR];
 
@@ -17,12 +19,15 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js'
   },
+  resolve: {
+    // symlinks: false
+  },
   module: {
     rules: [
       {
         test: /\.css$/,
         use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
-        include: defaultInclude
+        include: [SRC_DIR,braft_editor ]
       },
       {
         test: /\.jsx?$/,

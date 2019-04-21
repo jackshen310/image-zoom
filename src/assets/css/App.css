@@ -2,3 +2,10 @@ h1 {
   font-family: helvetica;
   font-weight: 200;
 }
+
+.public-DraftStyleDefault-ol, .public-DraftStyleDefault-ul {
+  display: inline;
+}
+#myCanvas {
+  display: none;
+}

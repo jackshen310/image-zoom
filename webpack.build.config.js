@@ -7,6 +7,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // Config directories
 const SRC_DIR = path.resolve(__dirname, 'src');
 const OUTPUT_DIR = path.resolve(__dirname, 'dist');
+const braft_editor = path.resolve(__dirname, 'node_modules/braft-editor');
+
 
 // Any directories you will be adding code/files into, need to be added to this array so webpack will pick them up
 const defaultInclude = [SRC_DIR];
@@ -26,7 +28,7 @@ module.exports = {
           fallback: 'style-loader',
           use: 'css-loader'
         }),
-        include: defaultInclude
+        include: [SRC_DIR, braft_editor]
       },
       {
         test: /\.jsx?$/,
